@@ -1,0 +1,329 @@
+* {
+    padding: 0;
+    margin: 0;
+    /*includes padding inside the width instead of adding to it*/
+    box-sizing: border-box;
+}
+
+body{
+    background: #1A2A80;
+    font-family: "Lexend";
+}
+
+/*Header styles*/
+header{
+    background: #3B38A0;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 100%;
+    padding: 20px;
+}
+
+header h1{
+    padding:10px 30px;
+    transition: 0.5s ease-in-out;
+}
+
+header h1:hover{
+    transform: scale(1.05);
+}
+
+.account-icon{
+    width: 50px;
+    height: auto;
+    border-radius: 50%;
+}
+
+header a:last-child {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*Footer styles*/
+footer{
+    background:#3B38A0;
+}
+
+footer p{
+    padding: 2% 0;
+    text-align: center;
+}
+
+/*Nav styling for Header*/
+nav{
+    font-family: "Meera Inimai";
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    font-size: 1.2em;
+}
+
+nav a {
+    margin: auto 20px;
+    transition: 0.5s;
+}
+
+nav a:hover {
+    color: #4DCCBD;
+    transform: scale(1.2);
+}
+
+a {
+    color: #070410;
+    text-decoration: none;
+}
+
+/* Div container for content */
+.main-content{
+    background: #1A2A80;
+    padding:10%
+}
+
+.main-header{
+    background: #3B38A0;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Video grid containers */
+.video-gallery-default{
+    background: #3B38A0;
+    display: grid;
+    padding: 5% 15%;
+    grid-template-columns: repeat(2, 1fr); /* 2 columns */
+    grid-template-rows: repeat(4, auto);   /* 4 rows */
+    gap: 40px;
+}
+
+.video-gallery-featured{
+    background: #3B38A0;
+    display: grid;
+    padding: 5% 15%;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, auto);   /* 4 rows */
+    gap: 40px;
+}
+
+/* Individual video container */
+.video-container {
+    transition: 0.5s ease-out;
+    background-color: #000;
+    border: 2px solid #B2B0E8;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.video-container:hover{
+    transform: scale(1.1);
+    z-index: 1; /* keeps video above neighbors */
+    border: 5px solid #4DCCBD;
+}
+
+/* Thumbnail */
+.video-container img {
+    width: 100%;
+    display: block;
+}
+
+/* Info box */
+.info {
+    width: 100%;
+    height: 100%;
+    background: #7A85C1;
+    padding: 10px;
+}
+
+/* Video title */
+.info h3 {
+    font-size: 15px;
+    margin: 0 0 4px;
+    color: black;
+}
+
+/* Channel name */
+.info p {
+    font-family: "Meera Inimai";
+    font-size: 13px;
+    margin: 0;
+    color: darkslategrey;
+}
+
+/*Alternate video card design*/
+.video-container.horizontal {
+    display: flex;
+    align-items: stretch;
+}
+
+.video-container.horizontal img {
+    width: 240px;      /* control thumbnail width */
+    height: auto;
+    object-fit: cover;
+}
+
+.video-container.horizontal .info {
+    flex: 1;
+    padding: 12px;
+    background: #7A85C1;
+    font-size: 4em;
+}
+
+/*Channel grid containers*/
+.channel-gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columns */
+    grid-template-rows: repeat(2, 1fr); /* 2 rows */
+    gap: 30px;
+}
+
+.channel-section {
+    background: #3B38A0;
+    padding: 20px 15%;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 10%;
+    color: black;
+}
+
+.channel-card {
+    background: #1A2A80;
+    border: 2px solid #B2B0E8;
+    border-radius: 10px;
+    padding: 20px 10px;
+    text-align: center;
+    transition: 0.4s ease;
+}
+
+.channel-card:hover {
+    transform: scale(1.08);
+    border-color: #4DCCBD;
+}
+
+/*Thumbnail*/
+.channel-card img {
+    width: 144px;
+    height: 144px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 12px;
+}
+/*Channel Name*/
+.channel-card h3 {
+    font-size: 1em;
+}
+
+/*Account Page Icon styling*/
+.accountpage-icon {
+    width: 96px;
+    height: 96px;
+    border-radius: 50%;
+    display: block;
+    margin: 0 auto 20px auto; /* center + space below */
+}
+
+/*Styleing for account menu*/
+.account-menu{
+    background: #B2B0E8;
+    padding: 5% 15%;
+    display: block;
+}
+
+
+label {
+    display: block;
+    margin-top: 12px;
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 4px;
+}
+
+.buttons {
+    margin-top: 16px;
+    display: flex;
+    justify-content: space-between;
+}
+
+button {
+    padding: 8px 16px;
+    cursor: pointer;
+}
+
+/*VW: Tablet (720px-1023px)*/
+@media (min-width: 720px) and (max-width: 1023px) {
+    .video-gallery-default{
+        grid-template-columns: 1fr; /* 2 columns */
+    }
+
+    .video-container{
+    display: flex;
+    align-items: stretch;
+    }
+
+    .video-container img{
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+
+    .account-menu h1{
+        display: flex;
+        justify-content: center;
+    }
+    
+    .buttons {
+        margin-top: 16px;
+        display: flex;
+        justify-content: space-evenly;
+    }
+}
+
+/*VW: Mobile (360px-719px)*/
+@media (max-width: 719px) {
+    .video-gallery-default{
+    padding: 5% 15%;
+    grid-template-columns: 1fr;
+    }
+
+    .video-container.horizontal {
+        flex-direction: column;
+    }
+
+    .video-container.horizontal img{
+        width: 100%;
+        height: auto;
+    }
+
+    .channel-gallery{
+    grid-template-columns: 1fr;
+    }
+
+    .channel-section {
+        padding: 30px 8%;
+    }
+
+    .channel-card img {
+        width: 112px;
+        height: 112px;
+    }
+
+    .account-menu h1{
+        display: flex;
+        justify-content: center;
+    }
+    
+    .buttons {
+        margin-top: 16px;
+        display: flex;
+        justify-content: space-evenly;
+    }
+}
